@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度首页</title>
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/drag.js"></script>
+		<script type="text/javascript" src="js/gVerify.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+	<body>
+		<!--扫码登录-->
+		<div class="login">
+			<div class="login-nav">
+				<span><i class="iconfont">&#xe623;</i></span>
+			</div>
+			<div class="login-top">
+				<h2>扫码登录</h2>
+			</div>
+			<div class="login-QR">
+				<span class="QR">
+					<span class="erweima"></span>
+					<span class="inphonePicture"><img src="images/saomaopicture.jpg" title="" alt="" /></span>
+				</span>
+				<strong>请使用<a href="https://mo.baidu.com/wuxian/?from=1019447z">百度APP</a>扫码登录</strong>
+				<div>
+					<span><i class="iconfont">&#xe61e;</i>安全</span>
+					<span><i class="iconfont">&#xe6b8;</i>高效</span>
+					<span><i class="iconfont">&#xe607;</i>便捷</span>
+				</div>
+			</div>
+			<div class="login-bottom">
+				<div class="login-bottom-left">
+					<a href="##" class="userLoginit">用户名登录</a>
+					|
+					<a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&client_id=100312028&response_type=code&display=pc&state=1516801281&redirect_uri=https%3A%2F%2Fpassport.baidu.com%2Fphoenix%2Faccount%2Fafterauth%3Fmkey%3Dc4c51417bfd679e8812bd1fef7ced754&scope=get_user_info,get_other_info,add_t,add_share"><i class="iconfont">&#xe600;</i></a>
+					<a href="https://api.weibo.com/oauth2/authorize?client_id=2512457640&response_type=code&display=page&state=1516801303&redirect_uri=https%3A%2F%2Fpassport.baidu.com%2Fphoenix%2Faccount%2Fafterauth%3Fmkey%3Db4129d202dbd2c0da746f139067f9091"><i class="iconfont">&#xe6dd;</i></a>
+				</div>
+				<div class="login-bottom-right">
+					<a href="##">立即注册</a>
+				</div>
+			</div>
+		</div>
+
+		<!--用户名登录-->
+		<div class="userLogin">
+			<div class="login-nav">
+				<span><i class="iconfont">&#xe623;</i></span>
+			</div>
+			<div class="login-top">
+				<h2>用户名密码登录</h2>
+			</div>
+			<div class="userLogin-center">
+				<em class="reminder">您的验证码输入有误</em>
+				<form>
+					<ul>
+						<li>
+							<input type="text" name="txt" placeholder="请输入手机/邮箱/用户名" id="txt" class="common" />
+							<i class="iconfont" id="cleartxt">&#xe623;</i>
+						</li>
+						<li>
+							<input type="password" name="psw" placeholder="密码" id="psw" class="common"/>
+							<i class="iconfont" id="clearpsw">&#xe623;</i>
+						</li>
+						<li class="vertificationCode">
+							<input type="text" name="vertify" id="vertify" class="vertify" placeholder="验证码" />
+							<div id="vertifyContainer" class="vertifyContainer"></div>
+							<span id="changeAnother">换一张</span>
+							<i class="iconfont error">&#xe623;</i>
+						</li>
+						<li class="noLogin">
+							<input type="checkbox" name="ck" id="ck" class="ck">下次自动登录
+						</li>
+						<li>
+							<input type="sumbit" value="登录" id="btn" class="btn" />
+						</li>
+					</ul>
+				</form>
+			</div>
+			<div class="otherways">
+				<a href="##">忘记密码</a>
+				<a href="##" id="messageLogin">短信快捷登录</a>
+			</div>
+			<div class="login-bottom">
+				<div class="login-bottom-left">
+					<a href="##" class='qrLoginit'>扫码登录</a>
+					|
+					<a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&client_id=100312028&response_type=code&display=pc&state=1516801281&redirect_uri=https%3A%2F%2Fpassport.baidu.com%2Fphoenix%2Faccount%2Fafterauth%3Fmkey%3Dc4c51417bfd679e8812bd1fef7ced754&scope=get_user_info,get_other_info,add_t,add_share"><i class="iconfont">&#xe600;</i></a>
+					<a href="https://api.weibo.com/oauth2/authorize?client_id=2512457640&response_type=code&display=page&state=1516801303&redirect_uri=https%3A%2F%2Fpassport.baidu.com%2Fphoenix%2Faccount%2Fafterauth%3Fmkey%3Db4129d202dbd2c0da746f139067f9091"><i class="iconfont">&#xe6dd;</i></a>
+				</div>
+				<div class="login-bottom-right">
+					<a href="##">立即注册</a>
+				</div>
+			</div>
+		</div>
+
+		<!--短信快捷登录-->
+		<div class="messageLogin">
+			<div class="login-nav">
+				<span><i class="iconfont">&#xe623;</i></span>
+			</div>
+			<div class="login-top">
+				<h2>用户名密码登录</h2>
+			</div>
+			<div class="messageLogin-center">
+				<p>验证即登录，未注册将自动创建百度帐号</p>
+				<span class="errorFormat">手机号码格式不正确</span>
+				<form>
+					<ul>
+						<li><input type="text" name="iphoneNumber" class="iphoneNumber" id="iphoneNumber" placeholder="请输入手机号码" /></li>
+						<li>
+							<input type="text" name="messageVeritify" id="messageVeritify" class="messageVeritify" placeholder="验证码">
+							<button>发送验证码</button>
+						</li>
+						<li>
+							<input type="submit" name="btn1" class="btn" id="btn1" value="登录"/>
+						</li>
+					</ul>
+				</form>
+				<div>
+					<span class="protocol">同意并接受<a href="##" class="userProtocol">《百度用户协议》</a></span>
+					<a href="##" class="userLoginit modality">用户名密码登录</a>
+				</div>
+			</div>
+			<div class="login-bottom">
+				<div class="login-bottom-left">
+					<a href="##" class='qrLoginit'>扫码登录</a>
+					|
+					<a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&client_id=100312028&response_type=code&display=pc&state=1516801281&redirect_uri=https%3A%2F%2Fpassport.baidu.com%2Fphoenix%2Faccount%2Fafterauth%3Fmkey%3Dc4c51417bfd679e8812bd1fef7ced754&scope=get_user_info,get_other_info,add_t,add_share"><i class="iconfont">&#xe600;</i></a>
+					<a href="https://api.weibo.com/oauth2/authorize?client_id=2512457640&response_type=code&display=page&state=1516801303&redirect_uri=https%3A%2F%2Fpassport.baidu.com%2Fphoenix%2Faccount%2Fafterauth%3Fmkey%3Db4129d202dbd2c0da746f139067f9091"><i class="iconfont">&#xe6dd;</i></a>
+				</div>
+				<div class="login-bottom-right">
+					<a href="##">立即注册</a>
+				</div>
+			</div>
+		</div>
+			
+		<!-- 遮罩层 -->
+		<div class="mask"></div>
+
+		<!--moreproduct-->
+		<div class="moreproduct">
+			<ul>
+				<li>
+					<span>更多产品</span>
+				</li>
+				<li>
+					<span><img src="images/nuomi.jpg" title="" alt=""></span>
+					<a href="https://www.nuomi.com/?cid=002540">糯米</a>
+				</li>
+				<li>
+					<span><img src="images/erji.jpg" title="" alt=""></span>
+					<a href="http://music.baidu.com">音乐</a>
+				</li>
+				<li>
+					<span><img src="images/pictures.jpg" title="" alt=""></span>
+					<a href="http://image.baidu.com">图片</a>
+				</li>
+				<li>
+					<span><img src="images/know.jpg" title="" alt=""></span>
+					<a href="https://zhidao.baidu.com">知道</a>
+				</li>
+				<li>
+					<span><img src="images/wenku.jpg" title="" alt=""></span>
+					<a href="https://wenku.baidu.com">文库</a>
+				</li>
+				<li>
+					<span><img src="images/top.jpg" title="" alt=""></span>
+					<a href="http://top.baidu.com/">风云榜</a>
+				</li>
+				<li>
+					<a href="https://www.baidu.com/more/">全部产品>></a>
+				</li>
+			</ul>
+		</div>
+		
+			
+		<!--网页头部-->
+		<div id="header-wrapper">
+			<div class="header">
+				<div class="nav">
+					<a href="##">新闻</a>
+					<a href="##">hao123</a>
+					<a href="##">地图</a>
+					<a href="##">视频</a>
+					<a href="##">贴吧</a>
+					<a href="##">学术</a>
+					<a href="##" id="login">登录</a>
+					<a href="##" id="setting">
+						设置
+						<div class="setting">
+							<ul>
+								<li>搜索设置</li>
+								<li>高级设置</li>
+								<li>关闭预测</li>
+								<li>搜索历史</li>
+							</ul>
+							<span></span>
+						</div>
+					</a>
+					<a href="##" id="moreproduct">更多产品</a>
+				</div>
+
+			</div>
+		</div>
+	
+	
+		<!--网页搜索部分-->
+		<div id="main-wrapper">
+			<div class="main">
+				<div class="logo">
+					<h1>
+						<a href="##" title="">百度</a>
+					</h1>
+				</div>
+				<div class="search">
+					<form>
+						<input type="text" id="searchK" name="searchk" class="searchk"/>
+						<input type="button" id="searchBtn" name="searchBtn" class="searchBtn" value="百度一下"/>
+						<i class="iconfont icon1">&#xe607;</i>
+						<i class="iconfont icon2">&#xe607;</i>
+						<span class="errorReminder">请输入正确的网址</span>
+					</form>
+				</div>
+				<div class="postPhoto">
+					<span class="plus">
+						<i class="wenzi">拖拽图片到这里来</i>
+						<i class="iconfont icon3">&#xe607;</i>
+					</span>
+					<input type="file" accept="image/jpeg"/>
+					<button><i class="iconfont icon4">&#xe607;</i>本地上传图片</button>
+					
+					<i class="iconfont close">&#xe623;</i>
+				</div>	
+			</div>
+		</div>
+	
+		<!--网页底部-->
+		<div id="footer-wrapper">
+			<div class="footer">
+				<div class="footer-header">
+					<span><img src="images/QR.jpg"/></span>
+					<i>百度</i>
+				</div>
+				<div class="footer-bottom">
+					<p>
+						<a href="##">把百度设为主页</a>
+						<a href="##">关于百度</a>
+						<a href="##">About Baidu</a>
+						<a href="##">百度推广</a>
+					</p>
+					<p>
+						<span>&copy;2018 Baidu<a href="##">使用前必读</a><a href="##">意见反馈</a>京ICP证030173号 <img src="images/navigation.jpg" /></span>
+						<span><a href="##">京公网安备11000002000001号</a><img src="images/huizhang.jpg"/></span>
+					</p>
+			</div>
+		</div>
+	</body>
+</html>

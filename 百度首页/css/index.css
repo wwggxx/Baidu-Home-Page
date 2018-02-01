@@ -1,0 +1,659 @@
+/*头部*/
+#header-wrapper{
+	height: 60px;
+	width:100%;
+	background: #fff;
+}
+.header{
+	height: 60px;
+	width: 100%;
+	background: #fff;
+}
+/*导航条*/
+.nav{
+	height: 60px;
+	line-height: 60px;
+	float: right;
+	cursor:default;
+}
+.nav a{
+	padding:0 10px;
+	text-decoration: underline;
+	color:#000000;
+	font-weight: bold;
+	position: relative;
+}
+.nav a#login,.nav a#setting{
+	font-weight: 100;
+}
+.nav a#setting{
+	display: inline-block;
+}
+.nav a#moreproduct{
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 100;
+	color:#fff;
+	background: #3388ff;
+	float: right;
+	margin:0 10px 0 20px;
+	width:60px;
+	height: 26px;
+	line-height: 26px;
+	padding: 0;
+	text-align: center;
+	position: relative;
+	top:18px;
+}
+.nav a:hover{
+	color:#3388ff
+}
+/*setting*/
+.setting{
+	width:72px;
+	height: 106px;
+	position: absolute;
+	top:50px;
+	right:-14px;
+	display: block;
+	cursor: pointer;
+	z-index: 1;
+	display: none;
+}
+.setting ul{
+	width:72px;
+	height: 106px;
+	line-height: 26px;
+	font-size: 16px;
+	color:#000;
+	border: 1px solid #eee;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	background: #fff;
+}
+.setting ul li:hover{
+	position: relative;
+	z-index: 1;
+	background: #3388ff;
+}
+.setting span{
+	display: inline-block;
+	width:25px;
+	height: 15px;
+	border: 1px solid #ccc;
+	transform: rotateZ(45deg);
+	position: absolute;
+	top:-4px;
+	left:29px;
+	z-index: -1;
+}
+.setting:after{
+	content: "";
+	display: inline-block;
+	width:10px;
+	height: 1px;
+	border: 3px solid #fff;
+	position: absolute;
+	top:-2px;
+	left:30px;
+}
+/*moreproduct*/
+.moreproduct{
+	width:90px;
+	height: 100%;
+	background: #f9f9f9;
+	cursor: default;
+	border-left: 1px solid #E0E0E0;
+	position: absolute;
+	top:0;
+	right: 0;
+	z-index: 2;
+	display: none;
+}
+.moreproduct ul{
+	height: 562px;
+}
+.moreproduct ul li{
+	height: 76px;
+	margin: 0 8px;
+	text-align: center;
+	border-bottom: 1px solid #f0f0f0;
+}
+.moreproduct ul li span{
+	display: block;
+	margin: 10px auto 7px auto;
+}
+.moreproduct ul li:first-child{
+	height: 56px;
+	line-height: 56px;
+}
+.moreproduct ul li:last-child{
+	height: 56px;
+	line-height: 56px;
+	text-decoration: underline;
+}
+/*login*/
+.mask{
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 3;
+	display: none;
+}
+.login{
+	width:358px;
+	height: 432px;
+	background: #fff;
+	position: absolute;
+	top:26%;
+	left:36%;
+	z-index: 4;
+	display: none;
+}
+.login-nav{
+	width:100%;
+	height: 26px;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	cursor: move;
+}
+.login-nav span{
+	position: absolute;
+	top:12px;
+	right: 14px;
+	cursor: pointer;
+}
+.login-top{
+	width:100%;
+	height: 30px;
+	background: url(../images/small-logo.jpg) no-repeat 28px 0;
+}
+.login-top h2{
+	font-size: 16px;
+	display: inline-block;
+	position: relative;
+	left:146px;
+	top:14px;
+}
+.login-QR {
+	padding:40px;
+	width:100%;
+	height: 314px;
+}
+.QR{
+	display: block;
+	width:256px;
+	height: 158px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.erweima{
+	width:156px;
+	height: 160px;
+	position: absolute;
+	top:0px;
+	left:50px;
+	background: url(../images/QR.jpg) center;
+	border: 1px solid #ecedee;
+}
+.inphonePicture{
+	width:100px;
+	height: 158px;
+	position: absolute;
+	left:256px;
+}
+.login-QR strong{
+	font-size: 16px;
+	display: block;
+	height: 56px;
+	line-height: 56px;
+	text-align: center;
+	
+}
+.login-QR strong a{
+	color:#6891ff;
+}
+.login-QR div{
+	text-align: center;
+}
+.login-QR div span{
+	margin:0 20px;
+	color:#999999;
+}
+.login-QR div span i{
+	margin-right: 6px;
+}
+.login-bottom{
+	width:100%;
+	height: 60px;
+	line-height: 60px;
+	background: #f0f6ff;
+	font-size: 14px;
+	color:#2e82ff;
+	padding: 0 30px;
+}
+.login-bottom-left{
+	float: left;
+}
+.login-bottom-left a{
+	color:#2e82ff;
+	margin-right:5px;
+}
+.login-bottom-left a:nth-child(2){
+	margin:0 5px;
+}
+.login-bottom-right{
+	float: right;
+}
+.login-bottom-right a{
+	color:#2e82ff;
+}
+/*userLogin*/
+.userLogin{
+	width:358px;
+	background: #fff;
+	position: absolute;
+	top:26%;
+	left:36%;
+	z-index: 4;
+	display:none;
+}
+.userLogin-center{
+	width:100%;
+	padding:0 28px;
+	margin-top: 32px;
+	text-align: center;
+	position: relative;
+}
+.reminder{
+	height: 14px;
+	line-height: 14px;
+	text-align: left;
+	font-size: 12px;
+	position: absolute;
+	top:-8px;
+	left:30px;
+	color:red;
+	display: none;
+}
+.userLogin-center li{
+	position: relative;
+}
+.common{
+	width:300px;
+	height: 40px;
+	margin:10px 0;
+	text-indent: 5px;
+	margin:10px 0;
+}
+.userLogin-center i{
+	position: absolute;
+	top:28px;
+	right: 10px;
+	font-size: 10px;
+	cursor: pointer;
+}
+.noLogin{
+	margin:10px 0;
+	height: 34px;
+	line-height: 34px;
+	text-align: left;
+	font-size: 12px;
+}
+.ck{
+	width:14px;
+	height: 14px;
+	margin-right: 6px;
+	position: relative;
+	top:3px;
+}
+.btn{
+	width:300px;
+	height: 40px;
+	background:#3f89ec;
+	border: none;
+	text-align: center;
+	color:#fff;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.vertificationCode{
+	width:100%;
+	height: 42px;
+	line-height: 42px;
+	margin:10px 0;
+	position: relative;
+	display: none;
+}
+.vertificationCode .error{
+	width:12px;
+	height: 12px;
+	font-size: 12px;
+	line-height: 12px;
+	position: absolute;
+	top:16px;
+	left:130px;
+	display: none;
+}
+.vertify{
+	width:150px;
+	height: 42px;
+	float: left;
+	text-indent: 5px;
+}
+.vertifyContainer{
+	display: inline-block;
+	width:92px;
+	height: 42px;
+	border: 1px solid #a9a9a9;
+	margin-left: 3px;
+}
+.vertificationCode span{
+	display:inline-block;
+	height: 42px;
+	line-height: 42px;
+	float: right;
+	color:#2e83ff;
+	cursor: pointer;
+}
+.otherways{
+	width: 100%;
+	padding:0 28px;
+	height: 38px;
+	line-height: 38px;
+	margin-bottom: 28px;
+}
+.otherways a:nth-child(1){
+	float: left;
+	font-size: 12px;
+	color:#2e82ff;
+}
+.otherways a:nth-child(2){
+	float: right;
+	font-size: 12px;
+	color:#2e82ff;
+}
+/*.messageLogin*/
+.messageLogin{
+	width:358px;
+	background: #fff;
+	position: absolute;
+	top:26%;
+	left:36%;
+	z-index: 4;
+	display:none;
+}
+.messageLogin-center{
+	margin-top: 14px;
+	padding:0 28px;
+}
+.messageLogin-center p{
+	color:#999999;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+}
+.messageLogin-center .errorFormat{
+	color: red;
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	visibility: hidden;
+}
+.messageLogin-center .iphoneNumber{
+	width:100%;
+	height: 42px;
+	text-indent: 5px;
+	margin-bottom: 16px;
+}
+.messageLogin-center .messageVeritify{
+	width:184px;
+	height: 42px;
+	text-indent: 5px;
+	margin-bottom: 16px;
+}
+.messageLogin-center button{
+	width:108px;
+	height: 42px;
+	float: right;
+	background: #fff;
+	border: 1px solid #a9a9a9;
+	color:#3e89ed;
+	transition: all 1s;
+}
+.messageLogin-center button:hover{
+	background: #EEEEEE;
+}
+.messageLogin-center div{
+	width:100%;
+	height: 36px;
+	line-height: 36px;
+	font-size: 12px;
+	color:#999999;
+	margin-bottom: 30px;
+}
+.protocol{
+	font-size: 12px;
+}
+.userProtocol{
+	font-size: 12px;
+	color:#2e82ff;
+}
+.modality{
+	font-size: 12px;
+	color:#2e82ff;
+	float: right;
+}
+.userProtocol:hover,.modality:hover{
+	color:#2e82ff;
+}
+/*网页搜索部分*/
+#main-wrapper{
+	width:100%;
+	height: 354px;
+	margin-top: 102px;
+	margin-bottom: 78px;
+}
+.main{
+	width:640px;
+	height: 354px;
+	margin:0 auto;
+	position: relative;
+}
+.logo{
+	width:210px;
+	height: 68px;
+	margin:0 auto;
+	background: url(../images/logo.jpg);
+}
+.logo a{
+	display: block;
+	width:210px;
+	height: 68px;
+	text-indent: -9999px;
+}
+.search{
+	width:100%;
+	height: 114px;
+	position: relative;
+	z-index: 2;
+}
+.searchk{
+	width: 540px;
+	height: 36px;
+	float: left;
+	margin:40px 0;
+	text-indent: 5px;
+	border:1px solid #DCDCDC;
+}
+.searchBtn{
+	width:100px;
+	height: 36px;
+	float: left;
+	background: #3385ff;
+	border: none;
+	margin: 40px 0;
+	font-size: 14px;
+	color:#fff;
+}
+.icon1{
+	position:absolute ;
+	top:50px;
+	right: 110px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.icon2{
+	position:absolute ;
+	top:50px;
+	right: 40px;
+	font-size: 20px;
+	font-weight: bold;
+	color:#fff;
+	display: none;
+	cursor: pointer;
+}
+.close{
+	position: absolute;
+	bottom:10px;
+	right: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.errorReminder{
+	position: absolute;
+	top:54px;
+	right: 110px;
+	font-size: 12px;
+	color:red;
+	display: none;
+}
+.postPhoto{
+	width:100%;
+	height: 246px;
+	position: absolute;
+	top:108px;
+	border: 1px solid #3385ff;
+	display: none;
+}
+.plus{
+	display: block;
+	width:600px;
+	height: 102px;
+	margin:58px 20px 0 20px;
+	background: #fafafa;
+	overflow: hidden;
+}
+.wenzi{
+	display:block;
+	margin-top:30px;
+	margin-left: 244px;
+	font-size: 14px;
+	color: #999999;
+}
+.icon3{
+	display: block;
+	font-size: 22px;
+	font-weight: bold;
+	width:22px;
+	height: 22px;
+	margin:14px auto;
+	cursor: pointer;
+}
+.postPhoto input{
+	width:160px;
+	height: 46px;
+	border: 1px solid #CCCCCC;
+	background: #fff;
+	font-size: 16px;
+	color:#000;
+	position: absolute;
+	bottom: 20px;
+	left:240px;
+	opacity: 0;
+	z-index: 1;
+}
+.postPhoto button{
+	width:160px;
+	height: 46px;
+	position: absolute;
+	bottom: 20px;
+	left:240px;
+	border: 1px solid #CCCCCC;
+	background: #fff;
+	z-index: -1;
+}
+.icon4{
+	width:18px;
+	height: 18px;
+	font-size: 18px;
+	float: left;
+	margin-left: 10px;
+	color:#0066FF;
+}
+/*footer*/
+#footer-wrapper{
+	width:100%;
+	height: 150px;
+	margin-bottom: 10px;
+}
+.footer{
+	width:640px;
+	height: 150px;
+	margin:0 auto;
+}
+.footer-header{
+	width:64px;
+	height: 84px;
+	margin:0 auto;
+	text-align: center;
+	margin-bottom: 14px;
+}
+.footer-header span{
+	display: block;
+}
+.footer-header span img{
+	width:64px;
+	height: 64px;
+}
+.footer-header i{
+	font-size: 12px;
+}
+.footer-bottom{
+	width:100%;
+	height: 50px;
+}
+.footer-bottom P:nth-child(1){
+	width:100%;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+}
+.footer-bottom P:nth-child(1) a{
+	font-size: 12px;
+	text-decoration: underline;
+	margin:0 7px;
+	color:#999999;
+}
+.footer-bottom P:nth-child(2){
+	width:100%;
+	color:#999999;
+}
+.footer-bottom P:nth-child(2) span:nth-child(1){
+	display: inline-block;
+	margin-right: 24px;
+}
+.footer-bottom P span a{
+	text-decoration: underline;
+	color:#999999;
+	margin:0 2px;
+	font-size: 12px;
+}

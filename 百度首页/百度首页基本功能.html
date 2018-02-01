@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百度首页</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			body,html{
+				width:100%;
+				height: 100%;
+			}
+			ul,li{
+				list-style: none;
+			}
+			#tmc{			/*透明层*/
+				width: 100%;
+				height: 100%;
+				background:#000;
+				opacity:0.7;
+				position: absolute;
+				top:0;
+				left: 0;
+				display: none;
+			}
+			#nav{
+				height: 60px;
+			}
+			#nav section{
+				height: 60px;
+				float: right;
+			}
+			#nav section a{
+				float: left;
+				padding:0 20px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+			}
+			#login{
+				width:400px;
+				height: 400px;
+				background: pink;
+				position: absolute;
+				top:30%;
+				left:40%;
+				display: none;
+				z-index: 9;
+			}
+			#login #tz{
+				width:100%;
+				height: 60px;
+				background: gray;
+				display: block;
+				text-align: center;
+				line-height: 60px;
+				font-size: 40px;
+				cursor:move;
+			}
+			#login ul{
+				width:240px;
+				height: 300px;
+				margin-top:40px;
+				text-align: center;
+				font-size: 18px;
+				position:relative;
+				margin:20px auto;
+				padding:0 60px;
+			}
+			#login ul li{
+				margin-bottom: 10px;;
+			}
+			#login ul li input{
+				width:240px;
+				height:34px ;
+			}
+			#login ul li input.ck{
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+			}
+			#login ul li:nth-of-type(4) i{
+				font-style:normal;
+				display: inline-block;
+			}
+			#btn{
+				width: 100px;
+				height: 40px;
+				border: none;
+				background: burlywood;
+				font-size: 24px;
+			}
+			em{
+				font-size: 12px;
+				color:red;
+				font-style: normal;
+			}
+			#box{
+				width:186px;
+				height: 20px;
+				margin-top:12px;
+				margin-bottom:12px;
+				display: none;
+			}
+			#box span{
+				width:60px;
+				height: 20px;
+				border: 1px solid #ccc;
+				float: left;
+				font-size: 18px;
+				line-height: 20px;
+				text-align: center;
+			}
+			#box1{
+				width:186px;
+				height: 20px;
+				margin-top:12px;
+				margin-bottom:12px;
+				display: none;
+			}
+			#box1 span{
+				width:60px;
+				height: 20px;
+				border: 1px solid #ccc;
+				float: left;
+				font-size: 18px;
+				line-height: 20px;
+				text-align: center;
+			}
+			/*menue*/
+			#menue{
+				width:100px;
+				height: 140px;
+				position: absolute;
+				top:50px;
+				right:90px;
+				display: none;
+				cursor: pointer;
+			}
+			#menue ul{
+				width:100px;
+				height: 140px;
+				line-height: 35px;
+				font-size: 16px;
+				color:#000;
+				box-shadow: 2px 2px 5px #000;
+				text-align: center;
+				background: #fff;
+			}
+			#menue span{
+				display: inline-block;
+				width:25px;
+				height: 15px;
+				border: 1px solid #ccc;
+				transform: rotateZ(45deg);
+				position: absolute;
+				top:-4px;
+				left:40px;
+				z-index: -1;
+			}
+			#menue::after{
+				content: "";
+				display: inline-block;
+				width:20px;
+				height: 1px;
+				border: 1px solid #fff;
+				position: absolute;
+				top:-1px;
+				left:40px;
+				z-index: 10;
+			}
+			/*moreshow*/
+			#nav section .moreshow .more{
+				background: blueviolet;
+				text-decoration: none;
+				height: 40px;
+				line-height: 40px;
+				margin-top: 10px;
+			}
+			.moreshow{
+				float: right;
+			}
+			.moreshow ul {
+				width:110px;
+				background: #E0E0E0;
+				position: absolute;
+				top:-800px;
+				right: 0;
+				text-align: center;
+				line-height:100px;
+			}
+			.moreshow ul li:nth-of-type(1){
+				font-size: 25px;
+				color: red;
+			}
+			/*搜索框*/
+			#content{
+				position: absolute;
+				left:50%;
+				top:50%;
+				margin-left: -327px;
+				margin-top:-220px;
+			}
+			#content #txt1{
+				width:550px;
+				height: 50px;
+				float: left;
+			}
+			#content #btn1{
+				width:100px;
+				height: 52px;
+				float: left;
+				background: #0066FF;
+				color: #fff;
+				font-size: 20px;
+				border: none;
+			}
+			.kk{/*框框*/
+				position: relative;
+				top:52px;
+				left:0;
+			}
+			.kk .xj{
+				width:30px;
+				height: 30px;
+				display: block;
+				background: darkslategray;
+				position: absolute;
+				top:-40px;
+				right: 115px;
+			}
+			.kk .showkk{
+				width:654px;
+				height: 300px;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 300px;
+				position: absolute;
+				top:0;
+				left: 0;
+				display: none;
+			}
+			.kk .showkk .x{
+				position: absolute;
+				right: 14px;
+				bottom: -130px;
+				font-size: 25px;
+				font-style: normal;
+				color: #CCCCCC;
+				cursor: pointer;
+			}
+			.tishi{
+				position: absolute;
+				top:-174px;
+				right: 115px;
+			}
+		</style>
+		<script type="text/javascript">
+			//用户名为11位数字的手机号码;
+			//密码为6-20位的任意字符，第一个字符不能为空格，长度为6-10(弱);
+			window.onload = function(){
+				var oSection = document.getElementsByTagName("section")[1];
+				var oA = oSection.getElementsByTagName("a")[0];
+				var oLogin = document.getElementById("login");
+				var oSpan = document.getElementsByTagName("span")[0];
+				var oTmc =document.getElementById("tmc");
+				
+				var oTxt = document.getElementById("txt");
+				var oPass = document.getElementById("pass");
+				var oRepass = document.getElementById("repass");
+				var oBtn = document.getElementById("btn");
+				var oUL = document.getElementById("list")
+				var oList = document.getElementsByTagName("li");
+				var oForm = document.getElementsByTagName("form")[0];
+				var oBox = document.getElementById("box");
+				var oBox1 = document.getElementById("box1");
+				var oChecked = document.getElementById("ck");
+				
+				
+				oA.onclick = function(){
+					oLogin.style.display="block";
+					oTmc.style.display="block";
+					oTmc.style.zIndex="2";
+					
+				}
+				
+				//cookie封装
+				function setCookie(key,keyValue,expires){
+					if (arguments.length>=2) {
+						var str = "";
+						if (expires) {
+							var oDate = new Date();
+							oDate.setTime(parseInt(expires)*1000+oDate.getTime());
+							str+=key+"="+keyValue+";expires="+oDate;
+						}else{
+							str+=key+"="+keyValue;
+						}
+					}
+					document.cookie = str;
+				}
+				//获取cookie中的数据
+				function getCookie(key){
+					var oData = document.cookie;
+					var oDataArr = oData.split("; ");
+					for (var i = 0;i<oDataArr.length;i++) {
+						if (oDataArr[i].split("=")[0]==key) {
+							return oDataArr[i].split("=")[1];
+						}
+					}
+				}
+				//判断该用户是否有十天免登陆
+				if (getCookie("form")!=undefined) {
+					oTxt.value = JSON.parse(getCookie("form")).name;
+					oPass.value = JSON.parse(getCookie("form")).password;
+					oRepass.value = JSON.parse(getCookie("form")).repassword;
+				}
+				
+				
+				//拖拽窗口
+				oSpan.onmousedown = function(e){
+					e = e || window.event;
+					//阻止默认行为
+					if (e.preventDefault) {
+						e.preventDefault();
+					}else{
+						e.returnValue = false;
+					}
+					var offsetX = e.offsetX;
+					var offsetY = e.offsetY;
+					document.onmousemove = function(eve){
+						var clientX = eve.clientX;
+						var clientY = eve.clientY;
+						oSpan.parentNode.style.left = (clientX-offsetX)+"px";
+						oSpan.parentNode.style.top = (clientY-offsetY)+"px";
+						
+					}
+					document.onmouseup = function(){
+						document.onmousemove = null;
+						document.onmousedown = null;
+					}
+				}
+				
+				
+				
+				
+				//用正则表达式验证是否满足条件
+				//验证账号
+				function oName (str) {
+					var reg = /^\d{11}$/g;
+					return reg.test(str);
+				}
+				//验证密码
+				function oPassword(str){
+					var reg = /^[^ ](\d|\w|\@|\#|\!|\$){5,19}$/g;
+					return reg.test(str);
+				}
+				//密码 弱
+				function oPasswordRuo(str){
+					var reg = /^[^ ](\d|\w|\@|\#|\!|\$){5,9}$/g;
+					return reg.test(str);
+				}
+				//密码 中
+				function oPasswordZhong(str){
+					var reg = /^[^ ](\d|\w|\@|\#|\!|\$){10,14}$/g;
+					return reg.test(str);
+				}
+				//密码 强
+				function oPasswordQiang(str){
+					var reg = /^[^ ](\d|\w|\@|\#|\!|\$){15,19}$/g;
+					return reg.test(str);
+				}
+				
+				//用户名确认
+				oTxt.onblur = function(){
+					var oTxtValue = oTxt.value;
+					if(oName(oTxtValue)){
+						if (oList[0].lastChild.nodeName=="EM") {
+							oList[0].removeChild(oList[0].lastChild)
+						}	
+					}else{
+						if (oList[0].lastChild.nodeName!="EM") {
+							var oi = document.createElement("em");
+							oi.innerHTML="您的用户名输入有误，请重新输入";
+							oList[0].appendChild(oi);
+						}
+					}
+				}
+				//密码确认是否符合要求
+				oPass.onblur = function(){
+					var oPassValue = oPass.value;
+					if(oPassword(oPassValue)){
+						if (oList[1].lastChild.nodeName=="EM") {
+							oList[1].removeChild(oList[1].lastChild)
+						}
+						if (oPasswordRuo(oPassValue)) {
+							oBox.style.display="block";
+							oBox.children[0].style.background="red";
+							oBox.children[1].style.background="";
+							oBox.children[2].style.background="";
+						}
+						if (oPasswordZhong(oPassValue)) {
+							oBox.style.display="block";
+							oBox.children[0].style.background="blue";
+							oBox.children[1].style.background="blue";
+							oBox.children[2].style.background="";
+						}
+						if (oPasswordQiang(oPassValue)) {
+							oBox.style.display="block";
+							oBox.children[0].style.background="green";
+							oBox.children[1].style.background="green";
+							oBox.children[2].style.background="green";
+						}
+					}else{
+						if (oBox.style.display=="block") {
+							oBox.style.display="none";
+						}
+						if (oList[1].lastChild.nodeName!="EM") {
+							var oi = document.createElement("em");
+							oi.innerHTML="您的用户名输入有误，请重新输入";
+							oList[1].appendChild(oi);
+						}
+					}
+				}
+				//再次输入密码
+				oRepass.onblur = function(){
+					var oPassValue = oPass.value;
+					var oRepassValue = oRepass.value;
+					if (oPassValue==oRepassValue) {
+						if (oList[2].lastChild.nodeName=="EM"){
+							oList[2].removeChild(oList[2].lastChild);
+						}
+					}else{
+						if (oList[2].lastChild.nodeName!="EM") {
+							var oi = document.createElement("em");
+							oi.innerHTML="您的密码输入有误，请重新输入";
+							oList[2].appendChild(oi);
+						}
+					}
+				}
+				
+				//提交
+				oBtn.onclick = function(){
+					var oList0 = oList[0].lastChild;
+					var oList1 = oList[1].lastChild;
+					var oList2 = oList[2].lastChild;
+					if (oList0.nodeName=="EM") {
+						alert("您的用户名输入有误，请您正确填写");
+					}else if (oList1.nodeName=="EM") {
+						alert("您的密码输入有误，请您正确填写");
+					}else if (oList2.nodeName=="EM") {
+						alert("您的确认密码输入有误，请您正确填写");
+					}else{
+						if (oChecked.checked) {
+							var form = {
+								"name":oTxt.value,
+								"password":oPass.value,
+								"repassword":oRepass.value
+							}
+							setCookie("form",JSON.stringify(form),600);
+						}
+						alert("提交成功");
+					}
+				}
+				
+				//菜单显示
+				var oCd = document.getElementById("cd");//菜单
+				var oMenue = document.getElementById("menue");
+				oCd.onmouseover = oMenue.onmouseover=function(){
+					oMenue.style.display="block";
+				}
+				oCd.onmouseleave =oMenue.onmouseleave= function(){
+					oMenue.style.display="none";
+				}
+				
+				//moreshow
+				var oMoreshow= document.getElementById("moreshow");
+				var oMore = document.getElementById("more");
+				oMoreshow.onmouseover =  function() {
+					animate(oMoreshow.children[1],"top",0)
+				}
+				oMoreshow.onmouseleave = function(){
+					animate(oMoreshow.children[1],"top",-800)
+				}
+				
+				//框框
+				var oShowkk = document.getElementById("showkk");
+				var oxj = document.getElementById("xj");
+				var oBtn1 = document.getElementById("btn1");
+				var flag = true;
+				oxj.onclick = function(){
+					if (flag) {
+						oShowkk.style.display="block";
+						oxj.style.right="35px"
+						oBtn1.value = "";
+						flag=false;
+					}else{
+						var oSpan = document.createElement("span");
+						oSpan.innerHTML="请输入正确的网zhi";
+						oSpan.style.color="red";
+						oSpan.className = "tishi"
+						oShowkk.appendChild(oSpan);
+						flag=true;
+					}	
+				}
+				
+				//x
+				var oX = document.getElementById("x");
+				oX.onclick = function(){
+					oShowkk.style.display="none";
+					oxj.style.right="115px";
+					oBtn1.value = "百度一下";
+					
+				}
+				//匀速动画的封装
+				//获取计算后的值
+				function computedStyle(dom,attr){
+					if (getComputedStyle) {
+						return getComputedStyle(dom,"")[attr];
+					}else{
+						return dom.currentStyle()[attr];
+					}
+				}
+				//动画封装
+				function animate(dom,attr,target){
+					clearInterval(dom.timer);
+					dom.timer = setInterval(function(){
+						var current = parseInt(computedStyle(dom,attr));
+						var step = (target>current)?10:-10;
+						if (current==target) {
+							clearInterval(dom.timer);
+							return false;
+						}
+						dom.style[attr]=(current+step)+"px";
+					})
+				}
+				
+	}
+		</script>
+	</head>
+	<body>
+		<section id="tmc"></section>
+		<nav id="nav">
+			<section>
+				<a href="##" title="">登录</a>
+				<a href="##" title="" id="cd">设置</a>
+				<div id="moreshow" class="moreshow">
+					<a href="##" title="" id="more" class="more">更多产品</a>
+					<ul>
+						<li>缓冲动画</li>
+						<li>动画</li>
+						<li>动画</li>
+						<li>动画</li>
+						<li>动画</li>
+						<li>动画</li>
+						<li>动画</li>
+						<li>动画</li>
+					</ul>
+				</div>
+				<div id="login">
+					<span id="tz">拖动我</span>
+					<form>
+						<ul id="list">
+							<li><input type="text" placeholder="请输入账号" id="txt"></li>
+							<li>
+								<input type="password" placeholder="请输入密码" id="pass"/>
+								<div id="box">
+									<span>弱</span>
+									<span>中</span>
+									<span>强</span>
+								</div>
+							</li>
+							<li><input type="password" placeholder="请再次输入密码" id="repass"/></li>
+							<li><input type="checkbox" name="ck" id="ck" class="ck" value="" /><i>十天免登陆</i></li>
+							<li><button id="btn">提交</button></li>
+						</ul>
+					</form>
+				</div>
+				<div id="menue">
+					<ul>
+						<li>验证表单</li>
+						<li>设置缓存</li>
+						<li>获取缓存</li>
+						<li>渲染页面</li>
+					</ul>
+					<span></span>
+				</div>
+			</section>
+		</nav>
+		<section id="content">
+			<form>
+				<input type="text" id="txt1"/>
+				<input type="button" id="btn1" value="百度一下"/>
+				<section id="kk" class="kk">
+					<span id="xj" class="xj"></span>
+					<div id="showkk" class="showkk">
+						点我上传图片，不服来站
+						<i id="x" class="x">X</i>
+					</div>
+				</section>
+			</form>
+		</section>
+	</body>
+</html>
